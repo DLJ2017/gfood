@@ -6,6 +6,7 @@ import Msite from '../pages/Msite/Msite.vue'
 import Search from '../pages/Search/Search.vue'
 import Order from '../pages/Order/Order.vue'
 import Profile from '../pages/Profile/Profile.vue'
+import Login from "../pages/login/login.vue"
 //全局注册Vue-router组件
 Vue.use(VueRouter)
 
@@ -15,23 +16,42 @@ export default new VueRouter({
   mode: 'history',
   routes: [{
       path: '/',
-      redirect: '/msite'
+      redirect: '/msite',
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/msite',
-      component: Msite
+      component: Msite,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/search',
-      component: Search
+      component: Search,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/order',
       component: Order,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/profile',
       component: Profile,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/login',
+      component: Login
     }
   ]
 })
